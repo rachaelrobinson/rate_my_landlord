@@ -92,18 +92,23 @@ a {
 .information {
 	background-color: #415984;
 	height: 50rem;
+	left: 45%;
+}
+
+#how {
+	padding-top: 2.5em;
+	left: 41%;
 }
 
 .information img{
 	display: block;
-	padding-top: 2em;
-	left: 45%;
+	padding-top: 6em;
 	position: absolute;
+	left: 13%;
 }
-
 #university img {
 	display: block;
-		position: relative;
+	position: relative;
 
 }
 #university {
