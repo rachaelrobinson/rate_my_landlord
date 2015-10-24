@@ -113,6 +113,12 @@ a {
 	left: 45%;
 }
 
+.loginform {
+	top: 20em;
+	position: absolute;
+	left: 31%;
+}
+
 #how {
 	padding-top: 2.5em;
 	left: 41%;
