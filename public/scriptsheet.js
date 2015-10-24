@@ -123,9 +123,24 @@ function run_other() {
 };
 
 function draw_map() {
-	console.log(lat);
-	console.log(lng);
+	marker = new google.maps.Marker({
+		position: new google.maps.LatLng(lat, lng),
+		title: "<p>Your Location</p>"
+	});
+
+	google.maps.event.addListener(marker, 'click', function() {
+		infowindow.setContent(marker.title);
+		infowindow.open(map, marker);
+	});
+
+	google.maps.event.addListenerOnce(map, 'idle', function(){
+		infowindow.setContent(marker.title);
+		infowindow.open(map, marker);
+	});
+
+	marker.setMap(map);
+
 	map_center = new google.maps.LatLng(lat, lng);
-	console.log("here");
+
 	map.panTo(map_center);
 }

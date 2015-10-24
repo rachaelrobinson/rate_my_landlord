@@ -9,7 +9,9 @@ body {
 }
 
 p {
-
+	font-family: helvetica;
+	color: #5C85FF;
+	font-size: 14pt;
 }
 
 a {
