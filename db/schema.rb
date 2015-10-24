@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151024021408) do
+ActiveRecord::Schema.define(version: 20151024035345) do
 
   create_table "house", force: true do |t|
     t.integer "house_num"
@@ -26,13 +26,12 @@ ActiveRecord::Schema.define(version: 20151024021408) do
     t.string "name"
   end
 
-  create_table "user", force: true do |t|
+  create_table "users", force: true do |t|
     t.string  "name"
     t.string  "type"
     t.string  "email"
     t.integer "house_id"
     t.string  "password"
-    t.string  "university"
   end
 
 end
