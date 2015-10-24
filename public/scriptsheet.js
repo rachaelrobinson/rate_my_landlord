@@ -37,9 +37,9 @@ function init() {
 	// if (window.location.pathname != "/") {
 	// 	run_other();
 	// }
-	else {
+	//else {
 		run_home();
-	}
+	//}
 }
 
 function displaySignUp() {
