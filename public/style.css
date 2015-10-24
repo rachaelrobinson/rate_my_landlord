@@ -159,7 +159,6 @@ a {
 	top: 27em;
 	position: absolute;
 	left: 42.2%;
-
 }
 
 .restofpage {
@@ -293,6 +292,9 @@ a {
 		height: auto;
 		left: 5%;
 	}
+	.howitworks {
+		left: 5em;
+	}
 }
 
 @media (max-width: 649px){
@@ -312,6 +314,10 @@ a {
 		width: 55em;
 		height: auto;
 		left: 5%;
+	}
+	.howitworks img{
+		width: 10em;
+		left: 5em;
 	}
 }
 

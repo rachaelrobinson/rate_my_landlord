@@ -120,7 +120,6 @@ var speed = 30;
 
 function scrollToInfo() {
 	autoScrollTo("restofpage");
-	console.log("IN FUNCTION");
 }
 function autoScrollTo(el) {
 	  var currentY = window.pageYOffset;
