@@ -316,8 +316,10 @@ a {
 		left: 5%;
 	}
 	.howitworks img{
-		width: 10em;
-		left: 5em;
+		width: 15em;
+	}
+	.howitworks {
+		left: 3.5em;
 	}
 }
 

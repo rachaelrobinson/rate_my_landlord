@@ -1,4 +1,5 @@
 /*script haha wahoo*/
+
 window.onload = function() {
  setTimeout (function () {
   scrollTo(0,0);
@@ -98,10 +99,6 @@ function displayLogin() {
 	// });
 }
 
-<<<<<<< HEAD
-function scroll() {
-	autoScrollTo("map_image");
-=======
 function run_home() {
 	map = new google.maps.Map(document.getElementById("map_image"), map_options);
 
@@ -127,11 +124,6 @@ var speed = 30;
 
 function scrollToInfo() {
 	autoScrollTo("restofpage");
-<<<<<<< HEAD
-=======
-	console.log("IN FUNCTION");
->>>>>>> 964d529dc309a4d28f2920ec9168ad02e0837a4d
->>>>>>> a274ad57ca27cdde5984e371335d8985770c4197
 }
 
 function autoScrollTo(el) {
