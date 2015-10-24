@@ -37,7 +37,7 @@ function init() {
 	if (window.location.pathname != "/") {
 		run_other();
 	}
-	else if(window.location.pathname == "/") {
+	else if(window.location.pathname == "/" || window.location.pathname == "/public") {
 		run_home();
 	}
 }
