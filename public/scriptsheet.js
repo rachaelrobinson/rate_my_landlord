@@ -26,12 +26,29 @@ var marker;
 var map_request;
 var form_request;
 function init() {
-	elem = document.getElementsByClassName("page_top");
-	[].slice.call(elem).forEach(function (div) {
-    	div.innerHTML = "<a href = '/'>Home</a>";
-	});
 	if (window.location.pathname != "/") {
-		run();
+		run_other();
+	}
+	else if(window.location.pathname == "/") {
+		run_home();
+	}
+}
+
+function run_home() {
+	map = new google.maps.Map(document.getElementById("map_image"), map_options);
+
+	//if allowed by the user, get the lat and lng and call make_request()
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			lat = position.coords.latitude;
+			lng = position.coords.longitude;
+			draw_map();
+		});
+	}
+	//otherwise print an error message on the page
+	else {
+		elem = document.getElementById("rendered_map");
+		elem.innerHTML = "Enable location services to view your location.";
 	}
 }
 
@@ -85,7 +102,7 @@ function send_form() {
 }
 
 
-function run() {
+function run_other() {
 	map = new google.maps.Map(document.getElementById("gmap"), map_options);
 
 	map_request = new XMLHttpRequest();

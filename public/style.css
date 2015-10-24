@@ -40,7 +40,7 @@ a {
 .home {
 	width: auto;
 	height: auto;
-	background-color: black;
+	background-color: #666666;
 }
 
 .bgpic {
@@ -92,8 +92,9 @@ a {
 
 }
 
-.map_image {
-	padding-top: -5px;
+#map_image {
+	width: auto;
+	height: 20em;
 }
 
 
