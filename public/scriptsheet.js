@@ -43,6 +43,10 @@ function displaySignUp() {
 	[].slice.call(elems).forEach(function (elem) {
 		$(elem).fadeOut("slow");
 	});
+	elems = document.getElementsByClassName("signupform");
+	[].slice.call(elems).forEach(function (elem) {
+		$(elem).fadeOut("slow");
+	});
 	elems = document.getElementsByClassName("loginform");
 	[].slice.call(elems).forEach(function (elem) {
 		$(elem).fadeIn("slow");
@@ -67,8 +71,12 @@ function displayLogin() {
 	});
 	elems = document.getElementsByClassName("loginform");
 	[].slice.call(elems).forEach(function (elem) {
+		$(elem).fadeOut("slow");
+	});
+	elems = document.getElementsByClassName("signupform");
+	[].slice.call(elems).forEach(function (elem) {
 		$(elem).fadeIn("slow");
-		elem.innerHTML = '<section class = "login-page">Welcome Back</h1><form><table><tr>' + 
+		elem.innerHTML = '<section class = "login-page"><h1>Welcome</h1><form><table><tr>' + 
 		'<td><label>Email:</label></td><td><input name="user[email]" type="text" value=""></td></tr><tr>' +
 	    '<td><label>Password:</label></td><td><input name="user[password]" type="password" value=""></td>' + 
 	    '</tr></table><input type="submit" value="Login" class="submit"/></form></section>';
