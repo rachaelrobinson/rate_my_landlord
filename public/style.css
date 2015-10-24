@@ -8,8 +8,26 @@ body {
 	
 }
 
+button {
+     background:none!important;
+     border:none; 
+     padding:0!important;
+     font: inherit;
+     border-bottom:0px; 
+     cursor: pointer;
+     transition: opacity .4s ease-in-out;
+   -moz-transition: opacity .4s ease-in-out;
+   -webkit-transition: opacity .4s ease-in-out;
+}
+
+button:hover {
+	opacity: 0.4;
+
+}
+
 p {
-	font-family: railway;
+	padding-left: 16px;
+	font-family: century gothic;
 	color: #5C85FF;
 	font-size: 14pt;
 }
