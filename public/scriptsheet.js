@@ -109,8 +109,14 @@ function run_home() {
 	}
 }
 
-function scroll() {
-	autoScrollTo("map_image");
+var scrollY = 0;
+var distance = 1;
+var dist = 8;
+var speed = 30;
+
+function scrollToInfo() {
+	autoScrollTo("restofpage");
+	console.log("IN FUNCTION");
 }
 function autoScrollTo(el) {
 	  var currentY = window.pageYOffset;
@@ -122,7 +128,7 @@ function autoScrollTo(el) {
 	    clearTimeout(animator);
 	  } else {
 	    if (currentY < targetY - distance) {
-	      scrollY = currentY + distance;
+	      scrollY = currentY + dist;
 	      window.scroll(0, scrollY);
 	    } else {
 	      clearTimeout(animator);
