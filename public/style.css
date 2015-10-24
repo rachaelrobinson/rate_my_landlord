@@ -4,12 +4,39 @@
 	margin: 0px;
 	padding: 0px;
 }
+
+@font-face {
+    font-family: "raleway";
+    src: url(./poly_design/fonts/Raleway-Regular.ttf) format("truetype");
+}
+
 body {
-	
+	font-family: raleway;
 }
 
 button {
-     background:none!important;
+	background:none!important;
+	border:none; 
+	padding:0!important;
+	font-family: raleway;
+	border-bottom:0px; 
+	cursor: pointer;
+	transition: opacity .4s ease-in-out;
+   	-moz-transition: opacity .4s ease-in-out;
+   	-webkit-transition: opacity .4s ease-in-out;
+}
+
+button:hover {
+	opacity: 0.4;
+
+}
+
+button:focus {
+	outline:0;
+}
+
+input[type="submit"] {
+	background:none!important;
      border:none; 
      padding:0!important;
      font: inherit;
@@ -20,14 +47,9 @@ button {
    -webkit-transition: opacity .4s ease-in-out;
 }
 
-button:hover {
-	opacity: 0.4;
-
-}
-
 p {
 	padding-left: 16px;
-	font-family: century gothic;
+	font-family: raleway;
 	color: #5C85FF;
 	font-size: 14pt;
 }
@@ -114,6 +136,12 @@ a {
 }
 
 .loginform {
+	top: 20em;
+	position: absolute;
+	left: 31%;
+}
+
+.signupform {
 	top: 20em;
 	position: absolute;
 	left: 31%;
