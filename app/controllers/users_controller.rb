@@ -1,30 +1,33 @@
 class UsersController < ApplicationController
 	def new
-		if current_user.profile
-			redirect_to profile_path(current_user.profile)
-		end
-		@profile = Profile.new
+		@user = User.new
 	end
 
 	def create
-		@profile = Profile.new(profile_params)
-		@profile.user = current_user
-		if @profile.save
-			flash[:success] = "Profile Created"
-			redirect_to profile_path(current_user.profile)
-
-		else
-			flash[:danger] = "Please fix errors below"
-			render 'new'
-		end
-	end
+    	@user = User.new(user_params)
+    	if @user.save
+      		log_in @user
+      		flash[:success] = "Welcome!"
+      		redirect_to @user
+    	else
+      		render 'new'
+    	end
+  	end
 
 	def show
-		@profile = Profile.find(params[:id])
+		@user = User.find(params[:id])
 	end
 
-	def profile_params
-		params.require(:profile).permit(:description, :pic)
-	end
+	def edit
+    	@user = User.find(params[:id])
+  	end
+
+
+  	private
+
+    def user_params
+      params.require(:user).permit(:name, :email, :password,
+                                   :type)
+    end
 
 end
