@@ -4,19 +4,54 @@
 <head>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=railway">
     <script
       src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDgx4J49sV4eFMRM-b0HxqM7Cq_0c8Nu48">
     </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type = "text/javascript" src="scriptsheet.js"></script>
     <title>Welcome Home</title>
 </head>
 
 <body onload=init()>
+    <div class = home>
+        <div class = bgpic>
+            <div class = icon>
+                <img src="./poly_design/homepage/home.png" alt="ur bad"/>
+            </div>
+            <div class = sign_up>
+                <img src="./poly_design/homepage/sign_up.png" alt="aw"/>
+            </div>
+            <div class = login>
+                <img src="./poly_design/homepage/login.png" alt="2 bad you can't login"/>
+            </div>
+            <div class = homesweethome>
+                <img src="./poly_design/homepage/text.png" alt="no text"/>
+            </div>
+            <div class = howitworks>
+                <!--<img src="./poly_design/homepage/howitworks.png" alt="sad"/>-->
+                <button name="howitwork" value="OK" onclick="scroll()"type="button"><img src="./poly_design/homepage/howitworks.png" alt="sad"/>
+                </button>
+
+            </div>
+        </div>
+    </div>
+        
+    <div id="restofpage">
+        <div class = "information">
+            <img src="./poly_design/homepage_scroll/text.png"/>
+        </div>
+        <div id = "map_image">
+        </div>
+    </div>
+
+
+
     <div class = "wrapper">
         <header class = "main-header">
         </header>
         <section class = "login-page">
-            <h1>Welcome</h2>
+            <h1>Welcome</h1>
             <form>
                 <table>
                     <tr>
