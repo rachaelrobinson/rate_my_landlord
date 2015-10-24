@@ -87,17 +87,50 @@ a {
 }
 
 .restofpage {
-	background-color: #00225D;
 }
 
 .information {
 	background-color: #415984;
-
+	height: 50rem;
 }
 
 .information img{
-	width: auto;
-	height: auto;
+	display: block;
+	padding-top: 2em;
+	left: 45%;
+	position: absolute;
+}
+
+#university img {
+	display: block;
+		position: relative;
+
+}
+#university {
+	display: inline-block;
+	position: relative;
+}
+#hands {
+	padding: 2em;
+	display: inline-block;
+		position: relative;
+
+}
+#hands img {
+	display: block;
+		position: relative;
+
+}
+#home {
+	padding: 2em;
+	display: inline-block;
+		position: relative;
+
+}
+#home img {
+	display: block;
+		position: relative;
+
 }
 
 @media (max-width: 1380px){
@@ -137,10 +170,10 @@ a {
 	}
 }
 
-
+/*
 @media (min-width: 1139px) {
 
-}
+}*/
 
 .map_image {
 	padding-top: -5px;
