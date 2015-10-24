@@ -1,7 +1,11 @@
 /*stylesheet for rml*/
 
+* {
+	margin: 0px;
+	padding: 0px;
+}
 body {
-
+	text-align: center:;
 }
 
 p {
@@ -12,3 +16,30 @@ a {
 
 }
 
+#gmap {
+	height: 500px;
+	width: 1000px;
+	/*margin-top: 35%;
+	margin-bottom: 35%;
+	margin-left: 15%;
+	margin-right: 15%;*/
+}
+
+.wrapper {
+	text-align: center;
+}
+
+.main_header {
+
+}
+
+.login_page {
+	
+}
+
+.page_top {
+	text-align: center;
+	font-family: helvetica;
+	font-size: 14pt;
+	background-color: #F0F0F0;
+}
