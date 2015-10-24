@@ -25,6 +25,18 @@ button:hover {
 
 }
 
+input[type="submit"] {
+	background:none!important;
+     border:none; 
+     padding:0!important;
+     font: inherit;
+     border-bottom:0px; 
+     cursor: pointer;
+     transition: opacity .4s ease-in-out;
+   -moz-transition: opacity .4s ease-in-out;
+   -webkit-transition: opacity .4s ease-in-out;
+}
+
 p {
 	padding-left: 16px;
 	font-family: century gothic;
