@@ -18,6 +18,7 @@ var map;
 
 function run() {
 	map = new google.maps.Map(document.getElementById("gmap"), map_options);
+	elem = document.getElementById("gmap");
+	elem.innerHTML = "hey"
 
-	
 };
