@@ -26,12 +26,29 @@ var marker;
 var map_request;
 var form_request;
 function init() {
-	elem = document.getElementsByClassName("page_top");
-	[].slice.call(elem).forEach(function (div) {
-    	div.innerHTML = "<a href = '/'>Home</a>";
-	});
 	if (window.location.pathname != "/") {
-		run();
+		run_other();
+	}
+	else if(window.location.pathname == "/") {
+		run_home();
+	}
+}
+
+function run_home() {
+	map = new google.maps.Map(document.getElementById("map_image"), map_options);
+
+	//if allowed by the user, get the lat and lng and call make_request()
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			lat = position.coords.latitude;
+			lng = position.coords.longitude;
+			draw_map();
+		});
+	}
+	//otherwise print an error message on the page
+	else {
+		elem = document.getElementById("rendered_map");
+		elem.innerHTML = "Enable location services to view your location.";
 	}
 }
 
@@ -85,7 +102,7 @@ function send_form() {
 }
 
 
-function run() {
+function run_other() {
 	map = new google.maps.Map(document.getElementById("gmap"), map_options);
 
 	map_request = new XMLHttpRequest();
@@ -106,9 +123,24 @@ function run() {
 };
 
 function draw_map() {
-	console.log(lat);
-	console.log(lng);
+	marker = new google.maps.Marker({
+		position: new google.maps.LatLng(lat, lng),
+		title: "<p>Your Location</p>"
+	});
+
+	google.maps.event.addListener(marker, 'click', function() {
+		infowindow.setContent(marker.title);
+		infowindow.open(map, marker);
+	});
+
+	google.maps.event.addListenerOnce(map, 'idle', function(){
+		infowindow.setContent(marker.title);
+		infowindow.open(map, marker);
+	});
+
+	marker.setMap(map);
+
 	map_center = new google.maps.LatLng(lat, lng);
-	console.log("here");
+
 	map.panTo(map_center);
 }

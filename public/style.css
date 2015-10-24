@@ -9,7 +9,9 @@ body {
 }
 
 p {
-
+	font-family: helvetica;
+	color: #5C85FF;
+	font-size: 14pt;
 }
 
 a {
@@ -40,7 +42,7 @@ a {
 .home {
 	width: auto;
 	height: auto;
-	background-color: black;
+	background-color: #666666;
 }
 
 .bgpic {
@@ -93,6 +95,7 @@ a {
 
 }
 
+<<<<<<< HEAD
 .information img{
 	width: auto;
 	height: auto;
@@ -100,6 +103,11 @@ a {
 
 .map_image {
 	padding-top: -5px;
+=======
+#map_image {
+	width: auto;
+	height: 20em;
+>>>>>>> 0fa4e638dc7fec4f78e16de5eed028033fae9c4d
 }
 
 @media (min-width: 650px) and (max-width: 1100px){
