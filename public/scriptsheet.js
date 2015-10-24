@@ -18,7 +18,7 @@ var map;
 
 var lat = 0;
 var lng = 0;
-var school = "Boulder";
+var school = "Harvard University";
 var url_school = encodeURIComponent(school);
 
 var marker;
@@ -34,6 +34,38 @@ function init() {
 		run();
 	}
 }
+
+// function scroll() {
+// 	autoScrollTo("butts");
+// }
+// function autoScrollTo(el) {
+// 	  var currentY = window.pageYOffset;
+// 	  var targetY = document.getElementById("butts").offsetTop;
+// 	  var bodyHeight = document.body.offsetHeight;
+// 	  var yPos = currentY + window.innerHeight;
+// 	  var animator = setTimeout('autoScrollTo(\'' + el + '\')', 24);
+// 	  if (yPos > bodyHeight) {
+// 	    clearTimeout(animator);
+// 	  } else {
+// 	    if (currentY < targetY - distance) {
+// 	      scrollY = currentY + distance;
+// 	      window.scroll(0, scrollY);
+// 	    } else {
+// 	      clearTimeout(animator);
+// 	    }
+// 	  }
+// 	}
+// function resetScroller(el) {
+// 	  var currentY = window.pageYOffset;
+// 	  var targetY = document.getElementById(el).offsetTop;
+// 	  var animator = setTimeout('resetScroller(\'' + el + '\')', speed);
+// 	  if (currentY > targetY) {
+// 	    scrollY = currentY - distance;
+// 	    window.scroll(0, scrollY);
+// 	  } else {
+// 	    clearTimeout(animator);
+// 	  }
+// }
 
 function send_form() {
 	form_request = new XMLHttpRequest();
