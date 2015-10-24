@@ -73,14 +73,22 @@ function displayLogin() {
 	[].slice.call(elems).forEach(function (elem) {
 		$(elem).fadeOut("slow");
 	});
-	elems = document.getElementsByClassName("signupform");
+	elems = document.getElementsByClassName("loginbg");
 	[].slice.call(elems).forEach(function (elem) {
 		$(elem).fadeIn("slow");
-		elem.innerHTML = '<section class = "login-page"><h1>Welcome</h1><form><table><tr>' + 
-		'<td><label>Email:</label></td><td><input name="user[email]" type="text" value=""></td></tr><tr>' +
-	    '<td><label>Password:</label></td><td><input name="user[password]" type="password" value=""></td>' + 
-	    '</tr></table><input type="submit" value="Login" class="submit"/></form></section>';
+		elem.innerHTML = '<img src="./poly_design/login_page/loginbackground.png"/><div class=loginform><section class = "login-page"><form><table><tr>' + 
+		'<td></td><td><input name="user[email]" type="text" value=""></td></tr><tr>' +
+	    '<td></td><td><input name="user[password]" type="password" value=""></td>' + 
+	    '</tr></table><input type="submit" value="" class="submit"/></form></section></div>';
 	});
+	// elems = document.getElementsByClassName("signupform");
+	// [].slice.call(elems).forEach(function (elem) {
+	// 	$(elem).fadeIn("slow");
+	// 	elem.innerHTML = '<section class = "login-page"><h1>Welcome</h1><form><table><tr>' + 
+	// 	'<td><label>Email:</label></td><td><input name="user[email]" type="text" value=""></td></tr><tr>' +
+	//     '<td><label>Password:</label></td><td><input name="user[password]" type="password" value=""></td>' + 
+	//     '</tr></table><input type="submit" value="" class="submit"/></form></section>';
+	// });
 }
 
 function run_home() {
