@@ -11,28 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151024000015) do
+ActiveRecord::Schema.define(version: 20151024021408) do
 
-  create_table "Landlord", force: true do |t|
-    t.string  "email"
-    t.string  "password"
-    t.string  "university"
+  create_table "house", force: true do |t|
     t.integer "house_num"
-    t.string  "house_street"
-    t.integer "house_zip"
+    t.string  "street"
     t.string  "city"
     t.string  "state"
+    t.integer "zip"
+    t.string  "university"
   end
 
-  create_table "Student", force: true do |t|
+  create_table "university", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "user", force: true do |t|
+    t.string  "name"
+    t.string  "type"
     t.string  "email"
+    t.integer "house_id"
     t.string  "password"
     t.string  "university"
-    t.integer "house_num"
-    t.string  "house_street"
-    t.integer "house_zip"
-    t.string  "city"
-    t.string  "state"
   end
 
 end

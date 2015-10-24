@@ -21,6 +21,7 @@ function init() {
 	[].slice.call(elem).forEach(function (div) {
     	div.innerHTML = "<a href = '/'>Home</a>";
 	});
+	
 }
 
 
