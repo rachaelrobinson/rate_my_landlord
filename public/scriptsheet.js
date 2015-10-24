@@ -34,10 +34,10 @@ var house_marker;
 var map_request;
 var form_request;
 function init() {
-	if (window.location.pathname != "/") {
-		run_other();
-	}
-	else if(window.location.pathname == "/" || window.location.pathname == "/public") {
+	// if (window.location.pathname != "/") {
+	// 	run_other();
+	// }
+	else {
 		run_home();
 	}
 }
