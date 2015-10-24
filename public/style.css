@@ -35,14 +35,50 @@ button:focus {
 	outline:0;
 }
 
+input[type="text"] {
+	background-image: url("./poly_design/login_page/email.png");
+	position: absolute;
+	top: -25em;
+	left: -9em;
+	height: 42px;
+	width: 356px;
+    border:none; 
+    padding:0!important;
+    font-family: raleway;
+    cursor: pointer;
+    transition: opacity .4s ease-in-out;
+   -moz-transition: opacity .4s ease-in-out;
+   -webkit-transition: opacity .4s ease-in-out;
+}
+
+input[type="password"] {
+	background-image: url("./poly_design/login_page/password.png");
+	position: absolute;
+	top: -20em;
+	left: -9em;
+	height: 42px;
+	width: 356px;
+    border:none; 
+    padding:0!important;
+    font-family: raleway;
+    cursor: pointer;
+    transition: opacity .4s ease-in-out;
+   -moz-transition: opacity .4s ease-in-out;
+   -webkit-transition: opacity .4s ease-in-out;
+}
+
 input[type="submit"] {
-	background:none!important;
-     border:none; 
-     padding:0!important;
-     font: inherit;
-     border-bottom:0px; 
-     cursor: pointer;
-     transition: opacity .4s ease-in-out;
+	background-image: url("./poly_design/login_page/signin.png");
+	position: absolute;
+	top: -13em;
+	left: -9em;
+	height: 42px;
+	width: 356px;
+    border:none; 
+    padding:0!important;
+    font-family: raleway;
+    cursor: pointer;
+    transition: opacity .4s ease-in-out;
    -moz-transition: opacity .4s ease-in-out;
    -webkit-transition: opacity .4s ease-in-out;
 }
@@ -135,6 +171,13 @@ a {
 	left: 45%;
 }
 
+.loginbg {
+	/*background-image: url("./poly_design/login_page/loginbackground.png");*/
+	top:20em;
+	position: absolute;
+	left:36%;
+}
+
 .loginform {
 	top: 20em;
 	position: absolute;
@@ -144,7 +187,7 @@ a {
 .signupform {
 	top: 20em;
 	position: absolute;
-	left: 31%;
+	left: 37%;
 }
 
 #how {
