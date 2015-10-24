@@ -119,7 +119,7 @@ function run_home() {
 
 var scrollY = 0;
 var distance = 1;
-var dist = 15;
+var dist = 30;
 var speed = 30;
 
 function scrollToInfo() {
