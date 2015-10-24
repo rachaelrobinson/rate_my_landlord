@@ -34,6 +34,18 @@ function init() {
 	}
 }
 
+function displaySignUp() {
+	new_elem = document.getElementById("login");
+	elems = document.getElementsByClassName("homesweethome", "howitworks");
+	[].slice.call(elems).forEach(function (elem) {
+		$(elem).fadeOut("slow");
+	});
+}
+
+function displayLogin() {
+
+}
+
 function run_home() {
 	map = new google.maps.Map(document.getElementById("map_image"), map_options);
 
@@ -52,7 +64,7 @@ function run_home() {
 	}
 }
 
-function scrollToInfo() {
+function scroll() {
 	autoScrollTo("map_image");
 }
 function autoScrollTo(el) {

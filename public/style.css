@@ -8,8 +8,26 @@ body {
 	
 }
 
+button {
+     background:none!important;
+     border:none; 
+     padding:0!important;
+     font: inherit;
+     border-bottom:0px; 
+     cursor: pointer;
+     transition: opacity .4s ease-in-out;
+   -moz-transition: opacity .4s ease-in-out;
+   -webkit-transition: opacity .4s ease-in-out;
+}
+
+button:hover {
+	opacity: 0.4;
+
+}
+
 p {
-	font-family: railway;
+	padding-left: 16px;
+	font-family: century gothic;
 	color: #5C85FF;
 	font-size: 14pt;
 }
@@ -87,17 +105,55 @@ a {
 }
 
 .restofpage {
-	background-color: #00225D;
 }
 
 .information {
 	background-color: #415984;
+	height: 50rem;
+	left: 45%;
+}
 
+#how {
+	padding-top: 2.5em;
+	left: 41%;
 }
 
 .information img{
-	width: auto;
-	height: auto;
+	display: block;
+	padding-top: 6em;
+	position: absolute;
+	left: 13%;
+}
+#university img {
+	display: block;
+	position: relative;
+
+}
+#university {
+	display: inline-block;
+	position: relative;
+}
+#hands {
+	padding: 2em;
+	display: inline-block;
+		position: relative;
+
+}
+#hands img {
+	display: block;
+		position: relative;
+
+}
+#home {
+	padding: 2em;
+	display: inline-block;
+		position: relative;
+
+}
+#home img {
+	display: block;
+		position: relative;
+
 }
 
 @media (max-width: 1380px){
@@ -137,10 +193,10 @@ a {
 	}
 }
 
-
+/*
 @media (min-width: 1139px) {
 
-}
+}*/
 
 #map_image {
 	width: auto;
