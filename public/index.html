@@ -4,41 +4,47 @@
 <head>
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" href="style.css" type="text/css" />
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgx4J49sV4eFMRM-b0HxqM7Cq_0c8Nu48&callback=initMap">
+    </script>
 	<title>TBD...</title>
 </head>
 
-<body>
+<body onload=run()>
 	<div class = "wrapper">
 		<header class = "main-header">
 		</header>
 	<section class = "login-page">
-		<h1>Login to view houses<h1>
+		<h1>Login to view houses</h1>
 		<h2>Login</h2>
 		<hr />
 		<form>
-        <table>
-        <tr>
-        	<td><label>Email:</label></td>
-        	<td><input name="user[email]" type="text" value=""></td>
-        </tr>
-        <tr>
-        	<td><label>Password:</label></td>
-            <td><input name="user[password]" type="password" value=""></td>
-        </tr>
-        </table>
+            <table>
+                <tr>
+                	<td><label>Email:</label></td>
+                	<td><input name="user[email]" type="text" value=""></td>
+                </tr>
+                <tr>
+                	<td><label>Password:</label></td>
+                    <td><input name="user[password]" type="password" value=""></td>
+                </tr>
+            </table>
         <hr />
-<!--         <div class="status">
-        <div class="wait">
-        	<img src="img/common/ajax-loader.gif" />
-                            </div>
-                            <div class="fail">
-                                FAILED
-                            </div>
-                        </div> -->
-                        <input type="submit" value="Login" class="submit" />
-                    </form>
+        <!--         <div class="status">
+            <div class="wait">
+            	<img src="img/common/ajax-loader.gif" />
+                                </div>
+                                <div class="fail">
+                                    FAILED
+                                </div>
+                            </div> -->
+            <input type="submit" value="Login" class="submit" />
+        </form>
+    </section>
 
 
+    <div id="gmap">
+    </div>
 </body>
 
 </html>
