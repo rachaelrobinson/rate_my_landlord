@@ -116,7 +116,7 @@ function run_other() {
 			console.log(parsed);
 			lat = parsed["results"][0]["geometry"]["location"]["lat"];
 			lng = parsed["results"][0]["geometry"]["location"]["lng"];
-			draw_map();
+			draw_house();
 		}
 	}
 
@@ -125,7 +125,30 @@ function run_other() {
 function draw_map() {
 	marker = new google.maps.Marker({
 		position: new google.maps.LatLng(lat, lng),
-		title: "<p>Your Location</p>"
+		title: "<p>You</p>"
+	});
+
+	google.maps.event.addListener(marker, 'click', function() {
+		infowindow.setContent(marker.title);
+		infowindow.open(map, marker);
+	});
+
+	google.maps.event.addListenerOnce(map, 'idle', function(){
+		infowindow.setContent(marker.title);
+		infowindow.open(map, marker);
+	});
+
+	marker.setMap(map);
+
+	map_center = new google.maps.LatLng(lat, lng);
+
+	map.panTo(map_center);
+}
+
+function draw_house() {
+	marker = new google.maps.Marker({
+		position: new google.maps.LatLng(lat, lng),
+		title: "<p>You</p>"
 	});
 
 	google.maps.event.addListener(marker, 'click', function() {
