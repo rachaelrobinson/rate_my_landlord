@@ -1,5 +1,9 @@
 /*script haha wahoo*/
-
+window.onload = function() {
+ setTimeout (function () {
+  scrollTo(0,0);
+ }, 100); //100ms for example
+}
 //center of the map to be created
 var map_center;
 
@@ -230,3 +234,5 @@ function draw_house() {
 
 	map.panTo(map_center);
 }
+
+
