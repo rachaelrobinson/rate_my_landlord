@@ -158,6 +158,9 @@ a {
 	height: auto;
 	left: 6.5em;
 }
+#info {
+	left: 14%;
+}
 
 .information img{
 	display: block;
@@ -195,21 +198,23 @@ a {
 		padding-top: 25.5em;
 		width: 70em;
 		height: auto;
-		left: 4em;
+		left: 3em;
 	}
 	.information img{
 		display: block;
-		padding-top: 5em;
+		padding-top: 7em;
 		position: absolute;
 		left: 7%;
 	}
-	#info img{
-		width: 65em;
+
+	#info {
+		width: 60em;
 		height: auto;
-		padding-top: 20em;
+		left:12%;
 	}
 	#how {
-		padding-top: 3em;
+/*		padding-top: 3em;
+*/		padding-bottom: 20em;
 	}
 }
 @media (min-width: 650px) and (max-width: 1100px){
