@@ -5,7 +5,7 @@
 	padding: 0px;
 }
 body {
-	text-align: center:;
+	
 }
 
 p {
@@ -37,9 +37,77 @@ a {
 	
 }
 
-.page_top {
-	text-align: center;
-	font-family: helvetica;
-	font-size: 14pt;
-	background-color: #F0F0F0;
+.home {
+	width: auto;
+	height: auto;
+	background-color: black;
 }
+
+.bgpic {
+	background-image: url("./poly_design/homepage/background.png");
+	margin-top: -10em;
+	height: 60em;
+	width: auto;
+	overflow: hidden;
+}
+
+.icon {
+	top: 1.5em;
+	left: 3em;
+	position: absolute;
+}
+
+.sign_up {
+	top: 1.5em;
+	right: 12em;
+	position: absolute;
+
+}
+
+.login {
+	top: 1.5em;
+	right: 5em;
+	position: absolute;
+
+}
+
+.homesweethome {
+	top: 20em;
+	position: absolute;
+	left: 31%;
+}
+
+.howitworks {
+	top: 27em;
+	position: absolute;
+	left: 42.2%;
+
+}
+
+.restofpage {
+
+}
+
+.information {
+
+}
+
+.map_image {
+	padding-top: -5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
