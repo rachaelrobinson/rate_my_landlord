@@ -1,5 +1,9 @@
 /*script haha wahoo*/
-
+window.onload = function() {
+ setTimeout (function () {
+  scrollTo(0,0);
+ }, 100); //100ms for example
+}
 //center of the map to be created
 var map_center;
 
@@ -94,8 +98,37 @@ function displayLogin() {
 	// });
 }
 
+<<<<<<< HEAD
 function scroll() {
 	autoScrollTo("map_image");
+=======
+function run_home() {
+	map = new google.maps.Map(document.getElementById("map_image"), map_options);
+
+	//if allowed by the user, get the lat and lng and call make_request()
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			lat = position.coords.latitude;
+			lng = position.coords.longitude;
+			draw_map();
+		});
+	}
+	//otherwise print an error message on the page
+	else {
+		elem = document.getElementById("rendered_map");
+		elem.innerHTML = "Enable location services to view your location.";
+	}
+}
+
+var scrollY = 0;
+var distance = 1;
+var dist = 8;
+var speed = 30;
+
+function scrollToInfo() {
+	autoScrollTo("restofpage");
+	console.log("IN FUNCTION");
+>>>>>>> 964d529dc309a4d28f2920ec9168ad02e0837a4d
 }
 
 function autoScrollTo(el) {
@@ -108,7 +141,7 @@ function autoScrollTo(el) {
 	    clearTimeout(animator);
 	  } else {
 	    if (currentY < targetY - distance) {
-	      scrollY = currentY + distance;
+	      scrollY = currentY + dist;
 	      window.scroll(0, scrollY);
 	    } else {
 	      clearTimeout(animator);
@@ -221,3 +254,5 @@ function draw_house() {
 
 	marker.setMap(map);
 }
+
+
