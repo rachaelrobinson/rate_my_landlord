@@ -161,7 +161,8 @@ a {
 	left: 42.2%;
 }
 
-.restofpage {
+#restofpage {
+	margin-bottom: -13rem;
 }
 
 .information {
@@ -190,86 +191,63 @@ a {
 }
 
 #how {
-	padding-top: 2.5em;
-	left: 41%;
-}
-
-#infotxt {
-	padding-top: 28em;
 	width: 80em;
 	height: auto;
-	left: 6.5em;
-}
-#info {
-	left: 14%;
-}
-
-.information img{
-	display: block;
-	padding-top: 7em;
 	position: absolute;
-	left: 13%;
-}
+	left: 5%;
 
-@media (max-width: 1380px){
+}
+#map_image {
+	width: auto;
+	height: 20em;
+}
+@media (max-width: 1380px) and (min-width: 1341px){
 	.bgpic {
 		margin-top: -8em;
 	}
-	#infotxt {
-		padding-top: 25.5em;
-		width: 75em;
-		height: auto;
-		left: 4em;
-	}
-	.information img{
-		display: block;
-		padding-top: 6em;
-		position: absolute;
-		left: 10%;
-	}
-	.restofpage {
-		margin-top: 4em;
-	}
-
 }
-@media (max-width: 1330px){
+@media (max-width: 1340px) and (min-width: 1101px){
+	#how {
+		width: 70em;
+		height: auto;
+	}
+	#restofpage {
+		margin-bottom: -18em;
+	}
+	#map_image {
+		height: 20em;
+		width: auto;
+	}
+}
+@media (max-width: 1330px) and (min-width: 1101px){
 	.bgpic {
 		margin-top: -6em;
 	}
-	#infotxt {
-		padding-top: 25.5em;
-		width: 70em;
-		height: auto;
-		left: 3em;
-	}
-	.information img{
-		display: block;
-		padding-top: 7em;
-		position: absolute;
-		left: 7%;
-	}
-
-	#info {
+}
+@media (max-width: 1200px) and (min-width: 991px) {
+	#how {
 		width: 60em;
 		height: auto;
-		left:12%;
 	}
-	#how {
-/*		padding-top: 3em;
-*/		padding-bottom: 20em;
+	#restofpage {
+		margin-bottom: -22em;
+	}
+	#map_image {
+		height: 22em;
+		width: auto;
 	}
 }
-
-@media (min-width: 1101px) and (max-width: 1180px){
-	#info {
-		width: 60em;
+@media (max-width: 990px) {
+	#how {
+		width: 55em;
 		height: auto;
-		left:10%;
 	}
-	#infotxt{
-		width: 65em;
-		height: auto;
-		left: 5em;
+	#restofpage {
+		margin-bottom: -25em;
+	}
+	#map_image {
+		height: 25em;
+		width: auto;
 	}
 }
 @media (min-width: 650px) and (max-width: 1100px){
@@ -282,19 +260,6 @@ a {
 	.homesweethome {
 		left: 5em;
 	}
-	#info {
-		width: 50em;
-		height: auto;
-		left:10%;
-	}
-	#infotxt{
-		width: 55em;
-		height: auto;
-		left: 5%;
-	}
-	.howitworks {
-		left: 5em;
-	}
 }
 
 @media (max-width: 649px){
@@ -305,21 +270,9 @@ a {
 		margin-left: -5em;	
 		max-width: 20em;
 	}
-	#info {
-		width: 50em;
-		height: auto;
-		left:10%;
-	}
-	#infotxt{
-		width: 55em;
-		height: auto;
-		left: 5%;
-	}
-	.howitworks img{
-		width: 15em;
-	}
-	.howitworks {
-		left: 3.5em;
+	.howitworks{
+		top: 25em;
+		left: 11%;
 	}
 }
 
@@ -328,10 +281,7 @@ a {
 
 }*/
 
-#map_image {
-	width: auto;
-	height: 20em;
-}
+
 
 
 
