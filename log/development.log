@@ -1983,3 +1983,322 @@ AbstractController::ActionNotFound (The action 'index' could not be found for Us
 
 
   Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.6ms)
+
+
+Started GET "/user" for 127.0.0.1 at 2015-10-25 22:19:19 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+ActionController::RoutingError (No route matches [GET] "/user"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/Cellar/ruby/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (55.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (83.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-10-25 22:19:34 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 241ms (Views: 202.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-10-25 22:19:34 -0400
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2015-10-25 22:19:35 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-10-25 22:19:35 -0400
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2015-10-25 22:19:35 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-10-25 22:19:35 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-10-25 22:19:35 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-10-25 22:19:35 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-25 22:19:35 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-10-25 22:19:35 -0400
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-10-25 22:19:37 -0400
+Processing by UsersController#new as JS
+  Rendered users/new.js.erb (18.6ms)
+Completed 500 Internal Server Error in 112ms
+
+ActionView::Template::Error (Missing partial users/_form, application/_form with {:locale=>[:en], :formats=>[:js, "application/ecmascript", "application/x-ecmascript", :html, :text, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/Rachael/Documents/rate_my_landlord/app/views"
+):
+    1: $('#user-form').html("<%= j (render 'form') %>");
+    2: $('#user-form').slideDown(350);
+  app/views/users/new.js.erb:1:in `_app_views_users_new_js_erb___2473657633483837120_70249453293220'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (23.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-10-25 22:20:16 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (11.4ms)
+Completed 500 Internal Server Error in 34ms
+
+ActionView::Template::Error (undefined method `simple_form_for' for #<#<Class:0x007fc8734d28b0>:0x007fc87346b520>):
+    1: 
+    2: <%= simple_form_for @user do |u| %>
+    3:   <%= user.input :name %> <br>
+    4:   <%= user.input :type %> <br>
+    5:   <%= user.input :email %> <br>
+  app/views/users/new.html.erb:2:in `_app_views_users_new_html_erb___2139735578233563821_70249434715060'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.4ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-10-25 22:21:29 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (133.7ms)
+Completed 500 Internal Server Error in 273ms
+
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x007fa83cc82170>:0x007fa83cc816d0>):
+    1: 
+    2: <%= simple_form_for @user do |u| %>
+    3:   <%= user.input :name %> <br>
+    4:   <%= user.input :type %> <br>
+    5:   <%= user.input :email %> <br>
+    6:   <%= user.input :password %> <br>
+  app/views/users/new.html.erb:3:in `block in _app_views_users_new_html_erb___4146613809420394976_70180258709660'
+  app/views/users/new.html.erb:2:in `_app_views_users_new_html_erb___4146613809420394976_70180258709660'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-10-25 22:21:46 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (83.5ms)
+Completed 200 OK in 270ms (Views: 269.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2015-10-25 22:21:46 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-10-25 22:21:46 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-10-25 22:21:46 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-10-25 22:21:46 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-10-25 22:21:46 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-10-25 22:21:46 -0400
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2015-10-25 22:21:46 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-10-25 22:21:46 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-25 22:21:46 -0400
+
+
+Started POST "/users" for 127.0.0.1 at 2015-10-25 22:22:04 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8M7NHJWK6c/i3sWLILFuja61dqhPh4lGNxCQP5AUZaI=", "user"=>{"name"=>"Rachael Robinson", "type"=>"Student", "email"=>"foo@foo.edu", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 2ms
+
+ActiveRecord::SubclassNotFound (Invalid single-table inheritance type: Student is not a subclass of User):
+  app/controllers/users_controller.rb:9:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (106.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-10-25 22:23:45 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8M7NHJWK6c/i3sWLILFuja61dqhPh4lGNxCQP5AUZaI=", "user"=>{"name"=>"Rachael Robinson", "type"=>"abc", "email"=>"foo@foo.edu", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 1ms
+
+ActiveRecord::SubclassNotFound (Invalid single-table inheritance type: abc is not a subclass of User):
+  app/controllers/users_controller.rb:9:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-10-25 22:24:04 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8M7NHJWK6c/i3sWLILFuja61dqhPh4lGNxCQP5AUZaI=", "user"=>{"name"=>"Rachael Robinson", "type"=>"abc", "email"=>"foo@foo.edu", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 16ms
+
+ActiveRecord::SubclassNotFound (Invalid single-table inheritance type: abc is not a subclass of User):
+  app/controllers/users_controller.rb:9:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-10-25 22:24:10 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8M7NHJWK6c/i3sWLILFuja61dqhPh4lGNxCQP5AUZaI=", "user"=>{"name"=>"Rachael Robinson", "type"=>"abc", "email"=>"foo@foo.edu", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 1ms
+
+ActiveRecord::SubclassNotFound (Invalid single-table inheritance type: abc is not a subclass of User):
+  app/controllers/users_controller.rb:9:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to ChangeTypetoUserType (20151026022623)
+  [1m[35m (390.7ms)[0m  ALTER TABLE `users` DROP `type`
+  [1m[36m (285.4ms)[0m  [1mALTER TABLE `users` ADD `user_type` varchar(255)[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20151026022623')[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-10-25 22:28:44 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (236.9ms)
+Completed 500 Internal Server Error in 364ms
+
+ActionView::Template::Error (undefined method `type' for #<User:0x007f9c126155c0>):
+    1: 
+    2: <%= simple_form_for @user do |u| %>
+    3:   <%= u.input :name %> <br>
+    4:   <%= u.input :type %> <br>
+    5:   <%= u.input :email %> <br>
+    6:   <%= u.input :password %> <br>
+    7:   <%= u.button :submit %>
+  app/views/users/new.html.erb:4:in `block in _app_views_users_new_html_erb__3609661418488878121_70154149853580'
+  app/views/users/new.html.erb:2:in `_app_views_users_new_html_erb__3609661418488878121_70154149853580'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-10-25 22:28:54 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 284ms (Views: 283.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2015-10-25 22:28:54 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-10-25 22:28:54 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-10-25 22:28:54 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-10-25 22:28:54 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-10-25 22:28:54 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-10-25 22:28:54 -0400
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2015-10-25 22:28:54 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-10-25 22:28:54 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-25 22:28:54 -0400
+
+
+Started POST "/users" for 127.0.0.1 at 2015-10-25 22:29:07 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8M7NHJWK6c/i3sWLILFuja61dqhPh4lGNxCQP5AUZaI=", "user"=>{"name"=>"Rachael Robinson", "user_type"=>"Student", "email"=>"foo@foo.edu", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`email`, `name`, `password`, `user_type`) VALUES ('foo@foo.edu', 'Rachael Robinson', 'abc', 'Student')[0m
+  [1m[35m (9.9ms)[0m  COMMIT
+Completed 500 Internal Server Error in 18ms
+
+NoMethodError (undefined method `log_in' for #<UsersController:0x007f9c11ac8730>):
+  app/controllers/users_controller.rb:11:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-10-25 22:32:07 -0400
+
+ActionController::RoutingError (uninitialized constant UsersController::SessionsHelper):
+  app/controllers/users_controller.rb:2:in `<class:UsersController>'
+  app/controllers/users_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (102.2ms)
+  [1m[36mUser Load (29.0ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (31.4ms)[0m  [1mDELETE FROM `users` WHERE `users`.`id` = 1[0m
+  [1m[35m (6.1ms)[0m  COMMIT

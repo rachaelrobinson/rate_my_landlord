@@ -1,8 +1,9 @@
-THIS IS ME
-<!-- Profile view -->
-<%= simple_form_for @profile do |p| %>
-  <%= p.input :description %> <br>
-  <%= p.input :pic %> <br>
-  <%= p.button :submit %>
+
+<%= simple_form_for @user do |u| %>
+  <%= u.input :name %> <br>
+  <%= u.input :user_type %> <br>
+  <%= u.input :email %> <br>
+  <%= u.input :password %> <br>
+  <%= u.button :submit %>
 
 <% end%>
