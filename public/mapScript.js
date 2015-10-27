@@ -1,16 +1,15 @@
 /*temp stuff*/
 
-var school = "Harvard University";
-var address = "54 Sunset Rd Medford, MA 02144"
-var url_school = encodeURIComponent(school);
-var url_address = encodeURIComponent(address);
-
+var addresses = ["3 Capen Ave, Medford MA", "56 Curtis Ave, Medford MA", "74 Bromfield Somerville MA", "27 Packard Ave, Somerville MA"]
+var url_addresses = [];
+for (x in addresses) {
+	url_addresses.push(encodeURIComponent(addresses[x]));
+}
 
 var marker;
-var house_marker;
+var marker;
 
 var map_request;
-var school_form;
 //center of the map to be created
 var map_center;
 
@@ -30,77 +29,14 @@ var map;
 var lat = 0;
 var lng = 0;
 
-
-function init() {
-	// if (window.location.pathname != "/") {
-	// 	run_other();
-	// }
-	//else {
-		run_home();
-	//}
-}
-
-
 function run_home() {
 	map = new google.maps.Map(document.getElementById("map_image"), map_options);
-
-	//if allowed by the user, get the lat and lng and call make_request()
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(function(position) {
-			lat = position.coords.latitude;
-			lng = position.coords.longitude;
-			draw_map();
-		});
-	}
-	//otherwise print an error message on the page
-	else {
-		elem = document.getElementById("rendered_map");
-		elem.innerHTML = "Enable location services to view your location.";
-	}
+	draw_map(0);
 }
 
-function school_form() {
-	school_form = new XMLHttpRequest();
-	school_form.open('GET', 'https://maps.googleapis.com/maps/api/geocode/json?address=' + url_school + '&key=AIzaSyDgx4J49sV4eFMRM-b0HxqM7Cq_0c8Nu48', true);
-	school_form.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	school_form.send();
-	school_form.onreadystatechange = function() {
-		if (school_form.readyState == 4 & school_form.status == 200) {
-			response = school_form.responseText;
-			parsed = JSON.parse(response);
-			console.log(parsed);
-			lat = parsed["results"][0]["geometry"]["location"]["lat"];
-			lng = parsed["results"][0]["geometry"]["location"]["lng"];
-			draw_map();
-		}
-	}
-}
-
-function run_home() {
-	map = new google.maps.Map(document.getElementById("map_image"), map_options);
-
-	//if allowed by the user, get the lat and lng and call make_request()
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(function(position) {
-			lat = position.coords.latitude;
-			lng = position.coords.longitude;
-			draw_map();
-			run_other();
-			});
-		}
-
-	//otherwise print an error message on the page
-	else {
-		elem = document.getElementById("rendered_map");
-		elem.innerHTML = "Enable location services to view your location.";
-	}
-}
-
-function run_other() {
-	//map = new google.maps.Map(document.getElementById("gmap"), map_options);
-
+function draw_map(x) {
 	map_request = new XMLHttpRequest();
-	map_request.open('GET', 'https://maps.googleapis.com/maps/api/geocode/json?address=' + url_address + '&key=AIzaSyDgx4J49sV4eFMRM-b0HxqM7Cq_0c8Nu48', true);
+	map_request.open('GET', 'https://maps.googleapis.com/maps/api/geocode/json?address=' + url_addresses[x] + '&key=AIzaSyDgx4J49sV4eFMRM-b0HxqM7Cq_0c8Nu48', true);
 	map_request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	map_request.send();
 	map_request.onreadystatechange = function() {
@@ -109,49 +45,66 @@ function run_other() {
 			parsed = JSON.parse(response);
 			lat = parsed["results"][0]["geometry"]["location"]["lat"];
 			lng = parsed["results"][0]["geometry"]["location"]["lng"];
-			draw_house();
+
+			marker = new google.maps.Marker({
+				position: new google.maps.LatLng(lat, lng),
+				icon: "./poly_design/pin.png",
+				title: "<p>A house</p>"
+			});
+
+			marker.setMap(map);
+
+			google.maps.event.addListener(marker, 'click', (function(marker, x) {
+				return function() {
+					infowindow.setContent(marker.title);
+					infowindow.open(map, marker);
+				}
+			})(marker, x));
+			if (x < 3) {
+				draw_map(x+1);
+			}
+			else {
+				add_my_marker();
+			}
 		}
 	}
-
-};
-
-function draw_map() {
-	house_marker = new google.maps.Marker({
-		position: new google.maps.LatLng(lat, lng),
-		title: "<p>You</p>"
-	});
-
-	google.maps.event.addListener(house_marker, 'click', function() {
-		infowindow.setContent(house_marker.title);
-		infowindow.open(map, house_marker);
-	});
-
-	google.maps.event.addListenerOnce(map, 'idle', function(){
-		infowindow.setContent(house_marker.title);
-		infowindow.open(map, house_marker);
-	});
-
-	house_marker.setMap(map);
-
-	map_center = new google.maps.LatLng(lat, lng);
-
-	map.panTo(map_center);
 }
 
-function draw_house() {
+function add_my_marker() {
+
+	//if allowed by the user, get the lat and lng and call make_request()
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			lat = position.coords.latitude;
+			lng = position.coords.longitude;
+			marker = new google.maps.Marker({
+				position: new google.maps.LatLng(lat, lng),
+				title: "<p>You</p>"
+			});
+
+			google.maps.event.addListener(marker, 'click', function() {
+				infowindow.setContent(marker.title);
+				infowindow.open(map, marker);
+			});
+
+			google.maps.event.addListenerOnce(map, 'idle', function(){
+				infowindow.setContent(marker.title);
+				infowindow.open(map, marker);
+			});
+			marker.setMap(map);
+
+			map_center = new google.maps.LatLng(lat, lng);
+
+			map.panTo(map_center);
+		});
+	}
+	//otherwise print an error message on the page
+	else {
+		elem = document.getElementById("rendered_map");
+		elem.innerHTML = "Enable location services to view your location.";
+	}
+
 	
-	marker = new google.maps.Marker({
-		position: new google.maps.LatLng(lat, lng),
-		icon: "./poly_design/pin.png",
-		title: "<p>A house</p>"
-	});
-
-	google.maps.event.addListener(marker, 'click', function() {
-		infowindow.setContent(marker.title);
-		infowindow.open(map, marker);
-	});
-
-	marker.setMap(map);
 }
 
 function user_form() {
