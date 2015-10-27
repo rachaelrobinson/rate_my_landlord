@@ -49,7 +49,7 @@ function draw_map(x) {
 			marker = new google.maps.Marker({
 				position: new google.maps.LatLng(lat, lng),
 				icon: "./poly_design/pin.png",
-				title: "<p>A house</p>"
+				title: "<p>" + addresses[x] + "</p>"
 			});
 
 			marker.setMap(map);
